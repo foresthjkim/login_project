@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>미션 - input 입력 양식 이용 덧셈 게산기</title>
+</head>
+<body>
+    <h3>덧셈 계산기 - 화면에서 입력값은 문자값으로 전달하기 때문에 이를 숫자값으로 변환하기 위하여 parseInt()함수사용</h3>
+    <form name="myform" action="#" method="post">
+        첫번째 정수 : <input id="x" type="text"> <br>
+        두번째 함수 : <input id="y" type="text"> <br>
+        합계 : <input id="sum" type="text" readonly> <br>
+        <input type="button" value="계산" onclick="calc()">
+    </form>
+
+    <script>
+       function calc() {
+        var x1 = document.getElementById("x").value;
+        if (x1=="") {
+            alert("x 정수값을 입력하세요");
+            return;
+        }
+        var y1 = document.getElementById("y").value;
+        if (y1=="") {
+            alert("y 정수값을 입력하세요");
+            return;
+        }
+        var sum1 = parseInt(x1) + parseInt(y1)
+        //alert(sum1)
+        
+        document.getElementById("sum").value = sum1
+    
+       }
+
+    </script>
+    
+</body>
+</html>

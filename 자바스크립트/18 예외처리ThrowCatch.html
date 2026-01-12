@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>20260105 예외처리</title>
+</head>
+<body>
+    <h2>try~ ~ catch 기본예제 </h2>
+    <script>
+        // try {
+        //     let x = y + 1;  //y가 정의되지 않음 --> 에러
+        // } catch (e) {
+        //     alert ("에러발생!");
+        // }
+    </script>
+    <h2>try ~ catch 에러 객체 (error / e)</h2>
+    <script>
+        try {
+          //  JSON.parse('{"name": "kim"}');  // 올바른 문법
+            JSON.parse("{name: 'kim'}");    // 잘못된 JASON 문법
+        } catch (e){
+            document.write("에러설명: "+ e.message + "<br>");
+            document.write("에러타입 : " + e.name);
+        }
+    </script>
+    <hr>
+
+    <h2>throw 예제: Number Guess</h2>
+    <p>1부터 100사이의 숫자를 입력하시요.</p>
+    <input id="number" type="text">
+    <button type="button" onclick="test()">숫자 추측</button>
+    <p id="message"></p>
+
+    <script>
+        var solution = 77;
+        function test(){
+            try {
+                var x = document.getElementById("number").value;
+                if (x=="") throw("입력없음");
+                if (isNaN(x)) throw "숫자가 아님";
+                if (x>solution) throw "너무 큼";
+                if (x<solution) throw "너무 작음";
+                if (x==solution) throw "성공";
+            }
+            catch (error){
+                var y = document.getElementById ("message");
+                y.innerHTML = "힌트 : " + error;
+            }   
+        }
+       
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>제어문2</title>
+
+</head>
+<body>
+    <!-- <h2>20251229 선택문 - switch</h2>
+    <p>선택문인 switch문은 변수에 저장된 값과 switch문에 있는 경우(case)의 값을 검사하여, 
+        변수와 경우의 값에서 일치하는 값이 있을 때 그에 해당하는 실행문을 실행합니다 (소/대문자 구분함).
+    </p> -->
+
+    <!-- <script>
+        var grade = prompt("성적을 입력하세요:", "A-F사이의 문자로");
+        switch (grade) {
+            case 'a':                                   //소문자도 적용하고자 할때
+            case 'A': alert("참 잘했어요!");
+                break;
+            case 'b':
+            case 'B': alert("좋은 점수군요");
+                break;
+            case 'c':
+            case 'C': alert("괜찮은 점수군요");
+                break;
+            case 'd':
+            case 'D': alert("좀더 노력하세요");
+                break;
+            case 'f':
+            case 'F': alert("다음학기 재 수강하세요");
+                break;
+            default: alert("알수없는 학점입니다. 확인하고 다시 입혁하여 주세요('주의': 문자는 소/대문자 구분함)")
+        }
+    </script> -->
+    <!-- 다른 방법: prompt로 입력받은 문자가 대문자일 경우 소문자로 변경 or vise versus: toLowerCase() or toUpperCase()
+    <script>    
+            var grade = prompt("성적을 입력하세요:", "A-F사이의 문자로").toLowerCase(); // 입력을 소문자로 변환    
+            switch (grade) {
+            case 'a': alert("참 잘했어요!"); break;        
+            case 'b': alert("좋은 점수군요"); break;        
+            case 'c': alert("괜찮은 점수군요"); break;        
+            case 'd': alert("좀더 노력하세요"); break;        
+            case 'f': alert("다음학기 재 수강하세요"); break;        
+            default: alert("알수없는 학점입니다. 확인하고 다시 입력하여 주세요('주의': 문자는 소/대문자 구분함)")
+         }
+    </script>
+     -->
+
+     <H2>숫자 맞추기 게임</H2>
+     이 게임은 컴퓨터가 생성한 숫자를 맞추는 게입입니다. 숫자는 1부터 100사이에 있습니다.
+     
+     <form>
+        숫자: 
+        <input type="text" id="user" size="5">
+        <input type="button" value="확인" onclick="guess();">
+        추측횟수:
+        <input type="text" id="guesses" size="5">
+        힌트:
+        <input type="text" id="result" size="20">
+     </form>
+
+     <script>
+        var computerNumber = 79;                                                    // 정답
+        var nGuesses = 0;                                                           // 추측횟수 초기값 0
+
+        function guess() {
+            var result = "";                                                        // 결과 메시지
+            var number = parseInt(document.getElementById("user").value);
+            
+             nGuesses++                                                             // 추측횟수를 1씩 증가
+                
+            if (number==computerNumber) {
+                    result = "성공입니다."
+                    alert("정답입니다. 게임을 다시 시작하여 주세요.");
+                    //초기화
+                    // computerNumber = 0;
+                    computerNumber = Math.floor(Math.random() * 100) + 1;;            // 정답을 주지않고 랜덤함수 사용할때
+                    nGuesses = 0;
+                    document.getElementById("user").value = "";
+                    document.getElementById("guesses").value = "";
+                    document.getElementById("result").value = "";
+                    return;
+                }
+            else if (number<computerNumber) result = "낮습니다.";
+            else result = "높습니다."
+
+            document.getElementById("result").value = result;
+            document.getElementById("guesses").value = nGuesses;
+            return true;
+        }
+     </script>
+     <hr>
+
+     <h2>반복문 : while</h2>
+     <p>지정된 조건이 참이면 반복 실행한다, 예: i=0부터 9까지 1씩 증가할때</p>
+
+     <script>
+        var i = 0;
+        var sum = 0;
+
+        while (i<10) {
+            i++;
+            document.write(i+"<br>");
+
+            sum = sum + i;
+        }
+        document.write("총합계: ", sum)
+     </script>
+     <hr>
+
+     <h2> while문을 사용하여 1부터 30까지 ==> 4의 배수 이면서 6의 배수인 숫자만 출력</h2>
+     <script>
+        var i = 1;
+        while (i<=30) {
+            if (i%4==0 && i%6==0) document.write(i ,"<br>");
+            i++;
+        }
+     </script>
+     <hr>
+
+    <h2>반복문 : for 문</h2>
+    <script>
+        var i = 0;
+        for (i=0; i<10; i++) {
+            document.write(i+"<br>");
+        }
+    </script>
+    <hr>
+
+    <h2>미션 : h1요소부터 h6요소까지 출력해 보시오</h2>
+    <script>
+        var i = 1
+        
+        for(i=1; i<7; i++) {
+            document.write("<h"+i+">"+header+i+"</h"+i+">");
+        }
+    </script>
+    <hr>
+
+    <h2>섭씨온도를 화씨온도로 변환하시오.</h2>
+    <table border="3">
+        <tr>
+            <td>섭씨온도</td>
+            <td>화씨온도</td>
+        </tr>
+        <script>
+            for(celsius = 0; celsius <=10; celsius++) {
+                document.write("<tr><td>" + celsius + "</td><td>" + ((celsius * 9.0 / 5) + 32) + "</td></tr>")
+            }    
+
+        </script>
+    </table>
+    <hr>
+
+    <h2>중첩 반복문 - 3행 2열의 표 만들기</h2>
+    <p>중첩 for 문을 사용하여 '1행 1열'부터 '3행 2열'까지 출력하시오.
+        바깥쪽  for 문은 행만큼 증가되고, 안쪽 for 문은 열만큼 증가시키면 된다.
+    </p>
+
+    <script>
+        document.write("<table border=1>");
+        
+        for(var i=1; i<=3; i++) {                                 //For 중첩문: 테이블 x 열 출력하기
+            document.write("<tr>");
+                for(var j=1; j<=2; j++) {
+                    document.write("<td>"+i+"행" +j+"열</td>")
+                }
+            document.write("</tr>");
+        }
+
+        document.write("</table>");
+    </script>
+    <hr>
+
+    <h2>구구단 출력하기</h2>                                    
+    <script>
+        var sum;                                                        //For 중첩문: 구구단 출력하기
+        for(var i=2; i<=9; i++) {
+            document.write("<h2>"+i+"단</h2>");
+
+            for(var k=1; k<=9; k++) {
+                sum = i*k;
+                document.write(i+"x"+k+"="+sum+"<br>")
+            }
+
+        }
+    </script>
+    <hr>
+
+    <h2>중첩 for문 : 5행 5열 표 만들기</h2>
+    <table border="3">
+        <script>                                                     //For 중첩문: 5행 5열 출력하기
+            var num=1;
+            for(var i=1; i<=5; i++) {                           
+                document.write("<tr>");
+
+                    for(j=1; j<=5; j++) {
+                        document.write("<td>"+num+"</td>");
+                        num++;
+                    }
+
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+    <hr>
+
+    <h2>do while 문</h2>
+    <p>while문의 경우에는 조건식의 만족여부를 먼저 검사한 후, 중괄호에 있는 실행문의 실행여부를 결정한다. 
+        do wile 문의 경우에는 반드시 한번은 실행문을 실행하고 조건식을 검사하게 된다.
+    </p>
+
+     <script>
+        var i = 0;
+        do {
+            document.write(i+"<br>");
+            i++;
+        } while (i<10)
+           
+     </script>
+
+     <script>
+        var i = 10;
+        do {                                                    //do wile 문의 경우에는 반드시 한번은 실행문을 실행하고 조건식을 검사 
+            document.write("Hellow" + "<br>");
+            i++;
+        } while (i<3)
+           
+     </script>
+     <hr>
+
+     <h2>for/in 반복문</h2>
+     <p>for/in 루프는 객체 안의 속성들에 대하여 어떤 처리를 반복할 수 있는 구조이다.</p>
+     <script>
+        var myCar = {make: "BMW", model: "X5", year: 2025};         //객체
+        var txt="";
+        
+        for(x in myCar) {
+            // document.write(myCar[x] + "<br>")
+            txt += myCar[x] + " "                                   // 문자열이기 때문에 옆으로 추가 가능: myCar X 속성 3개 값을 반복 출력
+        }
+        document.write(txt);
+
+     </script>
+     <hr>
+
+     <h2>break문</h2>
+     <p>반복문인 while문 또는 for문에서 break문을 실행하면 조건식과 상관없이 강제로 반복문을 종료시킨다. 즉 break문은 반복문을 강제로 끝낼 때 사용한다.</p>
+     <script>
+        var msg = "";
+        for(i=1; i<=10; i++) {
+            // document.write(i+"<br>")
+            // if(i==3) break;                          // break: 더이상 실행을 중지하고 for 반복문을 종료
+            if(i==3) continue;                          // contine: 다음 조건문은 실행하지 않고 건너뛴다. 예 3은 건너튀고 4부터 출력
+            msg += i + "<br>";
+
+        }
+        document.write(msg)
+     </script>
+     <hr>
+
+     <h2>continue를 사용해서 1부터 10까지 수 중 홀수만 출력하기</h2>
+     <script>
+        var msg = "";
+        for(i=1; i<=10; i++) {
+            if(i%2==0) continue;                        //2의 배수일경우에만 continue 문이 실행되어 스킵하고, 홀수인 경우에만 출력
+            document.write(i+"<br>")
+            // msg += i + "<br>";
+        }
+        // document.write(msg)
+     </script>
+    <hr>
+
+    <h2>100보다 작은 정수만 입력받기</h2>
+    <p>100보다 큰 정수가 들어오면 경고 상자를 표시한다.</p>
+    <script>
+        // var x = prompt("100 마먼 종수만 입력", "0");
+        if(x>100) {
+            alert("정수"+x+"은 100보다 작지 않습니다.")
+        }
+    </script>
+    <hr>
+
+    <h2>도전 미션 : 1부터 100까지 합 구하기</h2>
+    <p>1부터 100까지의 합을 구하는 프로그램을 작성해 본다. 결과는 alert() 를 호출해서 경고 상자 형태로 출력한다. 어떤 반복문을 사용해도 된다.</p>
+    <script>
+        var sum = 0;
+        for(var i=1; i<=100; i++) {
+            sum += i;
+        }
+        // document.write(sum);
+        alert(sum)
+    </script>
+    <hr>
+
+    <script>
+        var sum = 0;
+        var i = 1;
+        while (i<=100) {
+            sum += i;
+            i++;
+        }
+        document.write(sum);
+        
+    </script>
+  
+
+</body>
+</html>

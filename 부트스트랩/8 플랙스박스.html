@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플랙스 박스 (d-flex)</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+</head>
+<body>
+    <!-- 자동반복 생성: div>div{아이템}*3 -->
+    <!-- 배경:bg, 패딩간격(width):p 마진: m   -->
+    <!-- 컨텐츠 채우기: justfify-content-start/end/center/between/around/evenly  -->
+    <h2>주축 정렬 : justify</h2>
+    <p>
+        flexbox 컨테이너에서 justify-content 유틸리티를 사용하여 기본 축 (시작할 x축, flex-direction : column인 경우 y축)에서 
+        플렉스 항목들의 정렬을 변경합니다. start (브라우저 기본값), end , center , between , around 또는 evenly 
+        중에서 선택합니다.
+    </p>
+    <div class="d-flex bg-success justify-content-evenly">
+        <div class="bg-warning p-5 m-1">아이템</div>      
+        <div class="bg-warning p-5 m-1">아이템</div>
+        <div class="bg-warning p-5 m-1">아이템</div>
+    </div>
+
+    <h2>항목 정렬 : align-items</h2>
+    <p>
+        flexbox 컨테이너에서 align-items 유틸리티를 사용하여 교차 축 (시작할 y 축, flex-direction : column인 경우 x축)에서 
+        플렉스 항목의 정렬을 변경합니다. start , end , center , baseline(컨테이너 크기는 다르지만 각 글자의 정렬을 맞추고자 할때)
+        또는 stretch (브라우저 기본값) 중에서 선택합니다.
+        align-self-center (나 자신만 가운데 맞추고자 할때)
+    </p>
+    <div class="d-flex bg-success vh-100 align-items-baseline">
+        <div class="bg-warning p-5 m-1">아이템</div>
+        <div class="bg-warning p-5 m-1">아이템</div>
+        <div class="bg-warning p-3 m-1 align-self-center">아이템</div>
+    </div>
+
+
+
+
+    <script src="./jss/bootstrap.bundle.js"></script>
+    
+</body>
+</html>

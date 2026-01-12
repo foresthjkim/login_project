@@ -1,0 +1,80 @@
+/* 박스모델: 요소의 너비와 높이를 지정하는 속성- width와 height */
+/* 인라인 요소에는 가로세로 값이 적용되지 않는다: 예 span 적용하기 위해서는 display:inline-block적용해야 */
+.block, .inline {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+}
+.width {
+    width: 50%;
+    /* height: 20px; */
+    min-height: 20px;
+    border: 1px solid red;
+}
+/* 최소 및 최대 너비와 높이를 지정하는 속성:min-width/ max-width와 min-height/ max-height */
+.min {
+    min-width: 200px;
+    max-width: 70%;
+    border: 1px solid red;
+}
+
+/* 패딩 - 박스의 안쪽 여백 length : px, pt, cm 단위로 지정/% :상위 요소의 크기를 참조하여 비율로 결정 */
+.padding>li {
+    width: 150px;
+    height: 150px;
+    border: 1px solid red;
+    display: inline-block;
+    vertical-align: top;
+    background-color: chartreuse;
+    background-clip: content-box;    /*content부분만 색을 설정 */
+}
+.padding>li:nth-child(1) {
+    padding: 10px;
+}
+.padding>li:nth-child(2) {
+    padding: 10px 30px;            /* 상하10px, 좌우20px */
+}
+.padding>li:nth-child(3) {
+    padding: 10px 20px 30px;        /* 상 좌우 하 */
+}
+.padding>li:nth-child(4) {
+    padding: 10px 20px 30px 40px;   /* 상 우 하 좌 (시계방향) */
+}
+/* margin : 박스의 바깥쪽 여백 (border 바깥쪽 여백을 지정) */
+.margine>li {
+    width: 150px;
+    height: 150px;
+    border: 1px solid red;
+    display: inline-block;
+    vertical-align: top;
+    background-color: chartreuse;
+    background-clip: content-box;    /*content부분만 색을 설정  */
+}
+.margine>li:nth-child(1) {           /* margine은 선/색을 설정할 수 없음 */
+    margin: 10px;
+}
+.margine>li:nth-child(2) {
+    margin: 10px 20px;
+}
+.margine>li:nth-child(3) {
+    margin: 10px 20px 30px;
+}
+.margine>li:nth-child(4) {
+    margin: 10px 20px 30px 40px;  
+}
+/* --- 마진 겹침 현성 ---- */
+.block {
+    width: 100px;
+    height: 100px;
+    /* display: inline-block; 아래쪽으로 떨어뜨렸을 경우에는 마진 겹침현상이 발생: 마진이 20px가 아니라 10px로 적용됨 / 가로는 margin 20px로 보임*/
+    margin: 10px;
+}
+/* --- 블록요소와 인라인 요소의 수평정렬:왼쪽마진과 오른쪽 마진을 auto로 설정 --- */
+.block1 {
+    width: 400px;
+    margin: 10px auto;
+    background-color: aqua;
+}
+.inline2 {
+    text-align: center;     /* 인라인 요소를 가운데 정렬은 부모를 가운데 정렬해야 함 */
+}

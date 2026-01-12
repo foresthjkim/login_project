@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+ 
+    <title>비디오</title>
+</head>
+<body>
+    <video src="./images/Video_MP4_1.mp4" controls autoplay></video>  <!-- 방법1-->
+    <video width="640" poster="./images/moviworld_img.jpg" controls></video>
+
+    <video controls>
+        <source src="./images/Video_MP4_1.mp4" type="video/mp4">       <!-- 방법2 -->
+        <source src="./images/Video_MP4_1.ogg" type="video/ogg">       <!-- 브라우저 종류 지원여부에 따라 지원불가능한 버전일 경우 해당 비디오/오디오 파일소스를 추가해 줘야 한다. -->
+    </video>
+    
+</body>
+</html>

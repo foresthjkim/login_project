@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>폼 요소 선택자2</title>
+</head>
+<body>
+    <h2>공백 검증 : 확인버튼 클릭할때 사용자 이름 입력여부 예제</h2>
+    이름:<input type="text" id="user">
+    <input type="button"
+        onclick="checkNotEmpty(document.getElementById('user'))" 
+        value="확인"
+    >
+    <script>
+        function checkNotEmpty(field) {  
+            if(field.value.length == 0) {
+                alert("필드가 비어 있습니다.");
+                field.focus();
+                return false;
+            } else if(field.value.length < 5) {
+                alert("5자리 이상을 입력하셔야 합니다,")
+                field.focus();
+                return false;
+            }
+            alert("정상 입력되었습니다.")
+            return true;
+        }
+    </script>
+    <hr>
+    <!------------------- 입력한 문자의 자리수 길이를 체크 (5-8)하는 예제 -------------->
+    <h2>문자길이 체크 예제</h2>
+    <form action="#">
+        이름(6-8문자): <input type="text" id="name">
+        <input type="button" 
+            onclick="checkLength(document.getElementById('name'),6,8)"
+            value="확인"
+        >
+    </form>
+    <script>
+        function checkLength(field,min,max) {
+            var s = field.value;
+            if(s.length >= min && s.length <= max) {
+                alert("입력하신 자리수는 " + s.length + " 로 자리로 정상적으로 입력 하였습니다.")
+                return true;
+            } else {
+                alert("입력하신 자리수는 " + s.length + "이기 때문에 " + min + "문자와" + max + "문자 사이로 입력하여 주세요");
+                field.focus();
+                return false;
+            }
+            
+        }
+
+    </script>
+    <hr>
+    <!--------------------- 입력한 글자가 문자인지 숫자인지 체크하는 예제 -------------->
+    <h2>숫자 검증 예제</h2>
+    <form>
+        전화번호(-없이 입력): <input type="text" id="phone" value="">
+        <input type="button"
+            onclick="checkNumeric(document.getElementById('phone'),'숫자만 입력하세요.')"
+            value="확인"
+        >
+    </form>
+    <script>
+        function checkNumeric(elom,msg) {
+            //정규식 표현방식: /^[0-9]+$/    /로 시작-->  ^시작 /끝 [0-9] a-z까지 + 하나의 문자가 포함될 경우 
+            var exp = /^[0-9]+$/
+            if(elom.value.match(exp)) {
+                alert("정상적으로 숫자만 입력하였습니다.")
+                return true;
+            } else {
+                alert(msg);
+                elem.focus();
+                return false;
+            }
+
+        }
+    </script>
+    <hr>
+    <!--------------------- 선택검증 체크하는 예제 -------------->
+    <h2>선택 검증</h2>
+    <form>
+        과일선택 <select id="fruits" class="required">
+            <option value="0">선택하세요</option>
+            <option value="1">사과</option>
+            <option value="2">배</option>
+            <option value="3">바나나</option>
+        </select>
+        <input type="button"
+            onclick="checkSelection(document.getElementById('fruits'),'과일 하나를 선택하여야 합니다.')"
+            value="확인"
+        >
+        <script>
+            function checkSelection(elem,msg) {
+                if(elem.value==0) {
+                    alert(msg);
+                    elem.focus();
+                    return false;
+                } else {
+                    //switch 문을 사용해서 option에서 선택한 과일 이름을 화면 메시지에 표시할 수 있음
+
+                    switch (elem.value) {
+                        case "1":
+                            fruitName = "사과";
+                            break;
+                        case "2":
+                            fruitName = "배";
+                            break;
+                        case "3":
+                            fruitName = "바나나";
+                            break;
+                        default:
+                            fruitName = "올바를 과일 선택필요";
+                    }
+                    alert(fruitName + " 를 선택하였습니다.");
+                    return true;
+                }
+
+            }
+
+        </script>
+
+    </form>
+
+
+    
+</body>
+</html>

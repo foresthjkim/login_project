@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>파일업로드</title>
+
+</head>
+<body>
+    <form action="#" enctype="multipart/form-data">
+        <p><input type="file" accept="image/jpeg,image/gif"></p>
+        <p>form태크의 enctype="multipart/form-data"는 서버에 파일을 업로드할때 올바르게 업로드 하도록 도와준다.</p>   <!--나중에 백앤드 서버 spring 수업할때 사용예정-->
+        <p>&lt;input&gt; 태그의 accept속성은 업로드시킬 파일의 MIME타입을 브라우저에게 알려준다.</p>
+        <hr>
+
+        <p><input type="hidden" name="hidden" value="true"></p>
+        <p>&lt;input type="hidden"&gt;이 태그는 사용자가 입력한 데이터는 아니지만 클라이언트 컴퓨터가 서버 컴퓨터로 특정한 데이터를 전송하고 싶은 경우에 사용한다. 
+            화면에는 아무것도 나타나지 않고 사용자가 "제출"버튼을 누를 때, 서버로 name값과 value값이 전송됨</p>
+
+
+
+    </form>
+
+    
+</body>
+</html>

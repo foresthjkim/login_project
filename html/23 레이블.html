@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>레이블과 input요소를 연결</title>
+</head>
+<body>
+    <h3>label태그는 input요소를 위한 레이블(label)을 정의한다.</h3>
+    <p>&lt;label&gt; 태그의 속성 for를 사용하면 레이블과 &lt;input&gt;요소를 서로 연결할 수 있다.
+        마우스로 &lt;label&gt;을 클릭해도 &lt;input&gt; 요소를 클릭한 것과 같은 효과를 낸다.>
+    </p>
+
+    <form action="#">
+        <fieldset>
+            <legend>Label태그와 Input요소 연결</legend>
+
+            <label for="male">남성</label>
+            <input type="radio" name="gender" value="male" id="male">
+
+            <label for="female">여성</label>
+            <input type="radio" name="gender" value="female" id="female">
+            </p>
+            <input type="submit" value="전송">
+            <input type="reset" value="취소">
+
+        </fieldset>
+    </form>
+    
+</body>
+</html>

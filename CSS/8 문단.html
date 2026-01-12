@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>8 문단</title>
+<link rel="stylesheet" href="./CSS/8text.css">
+
+</head>
+<body>
+
+    <h2>문단 text-align</h2>
+	<p>문단을 블록의 오른쪽(right), 왼쪽(left), 가운데(center), 양쪽(justify) 정렬시켜 줍니다.</p>
+	<p>블록요소에만 사용할 수 있습니다.</p>
+ 
+    <div class="align1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat minima fuga laborum repellendus, vel ex perferendis neque unde ratione error perspiciatis necessitatibus, earum, consequatur odio corporis optio? Cupiditate natus similique corporis explicabo eligendi reprehenderit assumenda a alias. Quis, maiores veniam. Natus ea quod quis corrupti doloremque nobis molestiae delectus amet!</div>
+    <div class="align2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eius delectus laudantium odit, maiores eum voluptates dolore deleniti cum dicta suscipit itaque quia error dolorem neque voluptatem vitae provident dolorum.</div>
+    <div class="align3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima eos tempora, excepturi in nemo voluptas ratione! Perspiciatis, praesentium sit aspernatur maxime explicabo vitae neque quidem vero, delectus deleniti ab reprehenderit culpa? Voluptate, et! Eligendi, eius doloremque fugiat animi, dicta quaerat aut ab, esse cupiditate corporis quas officia ipsum cum tempora!</div>
+    <p class="align4"><span>Lorem, amet consectetur adipisicing elit.ipsum dolor sit amet consectetur adipisicing elit. Vitae, sint. test test1 test2</span></p>
+    <hr>
+
+    <h2>세로정렬 vertical-align</h2>
+    <ul>
+        <li>이미지나 폼 요소를 위, 가운데, 아래등으로 세로 정렬시켜 줍니다.</li>
+        <li>쓸수있는 값들 : top(위쪽 정렬), middle(중앙정렬), bottom(아래쪽 정렬)</li>
+        <li>img, input, select, 테이블의 th, td등에 사용합니다.</li>
+    </ul>
+    <p>자유여행 <img src="./images/trip_italy.jpeg" alt="여행사진" width="200px"></p>
+
+    <table border="1">
+        <tr>
+            <td>자유여행</td>
+            <td><img src="./images/trip_italy.jpeg" alt="자유여행" width="100px"></td>
+        </tr>
+    </table>
+    <hr>
+
+    <h2>들여쓰기</h2>
+    <ul>
+        <li>문단의 첫머리를 들여쓰기 합니다.</li>
+        <li>PX, %등의 단위를 적용할 수 있습니다.</li>
+        <LI>블록요소에만 사용가능합니다.</LI>
+    </ul>
+    <div class="indent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est, obcaecati consectetur quam nostrum ea animi atque cum, consequuntur repellendus quasi nulla maiores quis cupiditate necessitatibus officia dicta, recusandae molestiae nam. Tempore quos perspiciatis officiis veritatis nam ratione ut. Temporibus magni quod quis cupiditate enim laudantium dolorum id velit ex?</div>
+    <hr>
+
+    <h2>텍스트변환 : 대문자, 소문자, 첫 글자만 대문자</h2>
+    <div class="transform">
+        <p>대문자: <span>happy day!</span></p>
+        <p>소문자: <span>HAPPY DAY!</span></p>
+        <p>첫 글자만 대문자: <span>happy day!</span></p>
+    </div>
+    <hr>
+
+    <h2>텍스트 장식: text-decoration</h2>
+    <p>underline(밑줄), overline(윗줄), line-through(가운데 줄), none(제거)</p>
+    <div class="decoration">
+        <p>텍스트 장식-밑줄</p>
+        <p>텍스트 장식-윗줄</p>
+        <p>텍스트 장식-취소선</p>
+        <p><a href="#">네이버</a></p>
+    </div>
+    <hr>
+
+    <h2>자간 : letter-spacing</h2>
+    <ul class="letter">
+        <li>글자와 글자간의 간격을 부여합니다.==> -5px</li>
+        <li>px, em, rem 등의 단위로 수치를 적용합니다. ==>10px</li>
+    </ul>
+    <hr>
+
+    <h2>텍스트 그림자 : text-shadow</h2>
+    <p>x축 방향이동거리 (오른쪽:+,왼쪽-) y축 방향이동거리(상단:-, 하단:+) 흐림정도 그림자색상</p>
+    <h3 class="shadow1">그림자를 줄수 있어요 (3px 5px 10px #000)</h3>
+    <h3 class="shadow2">arrow</h3>
+
+
+</body>
+</html>
