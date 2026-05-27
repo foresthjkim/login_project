@@ -1,0 +1,70 @@
+:root {
+    --health-primary: #2563eb;
+    --health-primary-dark: #1e40af;
+    --health-soft: #eff6ff;
+    --health-border: #dbeafe;
+    --health-text: #1f2937;
+}
+
+body {
+    color: var(--health-text);
+    background: #f8fafc;
+}
+
+.page-section {
+    padding: 4rem 0;
+}
+
+.hero-section {
+    background: linear-gradient(180deg, #ffffff 0%, var(--health-soft) 100%);
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--health-border);
+    border-radius: 999px;
+    padding: .35rem .75rem;
+    color: var(--health-primary-dark);
+    background: #ffffff;
+    font-size: .875rem;
+    font-weight: 600;
+}
+
+.feature-card {
+    height: 100%;
+    border: 1px solid var(--health-border);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 .75rem 2rem rgba(37, 99, 235, .08);
+}
+
+.content-card {
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 .75rem 2rem rgba(15, 23, 42, .05);
+}
+
+.form-shell {
+    max-width: 560px;
+}
+
+.pre-line {
+    white-space: pre-wrap;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+@media (max-width: 575.98px) {
+    .page-section {
+        padding: 2.5rem 0;
+    }
+
+    .display-5 {
+        font-size: 2.1rem;
+    }
+}
