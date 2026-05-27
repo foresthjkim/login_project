@@ -1,0 +1,10 @@
+body {
+    margin-left: 200px;
+    background: green url(../images/mission14.png) no-repeat left top fixed;
+}
+.css {
+    border-style: dotted;
+    background-color: yellow;
+    border-width: 6px;
+    border-color: red;
+}

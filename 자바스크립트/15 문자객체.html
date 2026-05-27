@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>20251230 문자개체</title>
+</head>
+<body>
+    <h2>문자개체</h2>
+    아이디: <input type="text" id="id" size="10">
+    <button onclick="checkID()">검사</button>
+
+    <script>
+        function checkID() {
+            var s = document.getElementById("id").value;
+            if (s.length < 6) {
+                alert("입력하신 아이디 자리수는 " + s.length + "입니다." + "아이디는 6글자 이상이어야 합니다.");
+            }
+            else {
+                alert ("입력하신 아이디는" + s.length + "로 6자리이상 정상적으로 입력하였습니다.")
+            }
+        }
+    </script>
+    <hr>
+
+    <h2>대소문자 변환 예제</h2>
+    <script>
+        var s = "abcDEFgh";
+        var result1 = s.toLowerCase();
+        var result2 = s.toUpperCase();
+        var result3 = s.toLocaleLowerCase();
+        document.write(result1, "<br>", result2, "<br>", result3);
+    </script>
+    <hr>
+
+    <h2>문자열 붙이기 예제: concat</h2>
+    <script>
+        var s1 = "누구에게나 친구는 ";
+        var s2 = "어느 누구에게도 친구가 아니다.";
+        
+        s3 = s1.concat(s2);
+        document.write(s3 + "<br>");
+        document.write(s1+s2+"<br>");
+        s3 = s2.concat(s1);
+        document.write(s3 + "<br>");
+    </script>
+    <hr>
+
+    <h2>문자열 검색: str_indexOf</h2>
+    <script>
+        var s = "자바스크립트에 오신 것을 환영합니다.";
+        var t = "호랑나비 흰나비";
+        var n = s.indexOf("환영");
+        document.write(n + "<br>");
+
+        var m = s.indexOf("우");
+        document.write(m,"<br>");
+
+        var u = t.lastIndexOf("나");
+        document.write(u + "<br>");
+
+        var f = t.indexOf("나");
+        document.write(f);
+    </script>
+    <hr>
+
+    <h2>문자열 매칭: str_match</h2>
+    <script>
+        str = "Like father, like son.";
+        result = str.match("like");
+        document.write(result + "<br>");
+
+        result = str.match(/like/ig);               //i와 g는 옵션으로, insensitive (대,소문자 미 구분), globally(모든 스크립트 허용)를 의미한다. / 정규 표현은 " / / 사이에 표현"                                   
+        document.write(result + "<br>");
+    </script>
+    <hr>
+
+    <h2>문자열 대체: replace</h2>
+    <script>
+        s = "이젠 IT학원 학생입니다.";
+        document.write(s+"<br>");
+        result = s.replace("이젠","두드림");
+        document.write(result);
+
+    </script>
+    <hr>
+
+    <h2>Split 예제</h2>
+    <script>
+        s = "One, Two, Three, Four, Five";
+        array = s.split(",");
+        for(i=0;i<array.length;i++) {
+            document.write(i + "-" + array[i] + "<br>");
+        }
+    </script>
+    <hr>
+
+    
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* 2. 타입선택자(태그 이름)를 사용하여 h3태그와 li태그를 선택하고, 글자색을 브라운(brown)으로 적용하시오. 그룹선택자를 사용하시오. */
+h3, li {
+    color: brown;
+}
+
+/* 3. 자식 선택자를 사용하여 div의 자식인 strong을 선택하고 배경색을 노랑색(yellow)으로 적용하시오.*/
+div>strong {
+    background-color: yellow;
+}
+/* 4. 자손 선택자(후손 선택자)를 사용하여 ul의 후손인 strong를 선택하고 글자색을 dodgerblue로 적용하시오. */
+ul strong {
+    color:dodgerblue;
+}
+
+/* 5. 클래스선택자를 사용하여 warning를 선택하고 글자색을 red로 적용하시오. */
+.warning {
+    color: red;
+}
+
+/* 6. 종속선택자를 사용하여 main클래스를 선택하고 배경색을 aliceblue로 적용하시오. */
+body.main {
+    background-color: aliceblue;
+}
+
+/* 7. id선택자를 사용하여 list를 선택하고 배경색은 mistyrose를 적용하시오.  */
+#list {
+    background-color: mistyrose;
+}
+
+/* 8. 자손선택자로 span요소를 선택하고 글자색을 forestgreen으로 적용하시오. */
+ul>li:nth-child(1)>span {
+    color: forestgreen;
+}
+
+/* 9. h3태그의 요소의 첫글자를 선택하고 글자색을 red로 적용하시오. */
+ h3:first-letter {
+    color:red;
+}
+
+/* 10. li요소에 마우스를 올리면 배경색이 yellowgreen이 적용되도록 하시오. */
+#list>li:hover {
+    background-color: yellowgreen;
+}

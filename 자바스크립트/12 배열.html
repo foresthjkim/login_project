@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>배열</title>
+
+</head>
+<body>
+    <h2>Array 배열생성</h2>
+    <script>
+        //--------------생성방법 1: Array객체로 배열생성
+        var i;
+        // var fruits = new Array();
+        // fruits[0] = "apple";
+        // fruits[1] = "banana";
+        // fruits[2] = "pear";
+        // fruits[3] = "pinaple";
+        // fruits[4] = "kiwi";
+
+        //-------------생성방법 2: 리터럴로 배열생성
+        // var fruits = ["apple", "banana", "pear","pinaple","kiwi"]
+
+        //-------------생성방법 3: Array객체로 배열 생성
+        var fruits = new Array("apple", "banana", "pear","pinaple","kiwi")
+
+        document.write("자료의 수 : " + fruits.length + "<br>")
+
+        for (i=0; i<fruits.length; i++) {
+            document.write(fruits[i] + "<br>")
+        }
+    </script>
+    <hr>
+
+    <h2>연관 배열</h2>
+    <p>연관배열은 카(key)를 이용해 값을 저장하였다가 다시 추출할 수 있다 (자동 배열 인덱스 값을 사용하지 않을 경우) </p>
+    <script>
+        var fruits = new Array();
+        fruits['a'] = '사과';
+        fruits['b'] = '포도';
+
+        document.write(fruits['a'] + "<br>");
+        document.write(fruits['b'] + "<br>");
+    </script>
+    <hr>
+
+    
+
+    
+</body>
+</html>

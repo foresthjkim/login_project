@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>html 요소찾기</title>
+</head>
+<body>
+    <h2>html 요소찾기</h2>
+    <form name="myform">
+        <input type="text" id="target" name="text1">
+        <input type="submit" value="제출" onclick="process()">
+
+        <script>
+            function process() {
+                // -- id 로 찾기 --
+                // alert(document.getElementById("target").value)
+
+                // -- 입력양식으로 찾기 --
+                // alert(document.myform.text1.value)
+            }
+        </script>
+    </form>
+    <hr>
+
+    <h2>태그 이름으로 html 요소 찾기</h2>
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+    </ul>
+    <script>
+        var list = document.getElementsByTagName("ul")[0];
+        var allitems = list.getElementsByTagName("li")
+
+        // for (var i = 0; i<allitems.length; i++) {
+        //     alert(allitems[i].firstChild.data)
+        // }
+    </script>
+    <hr>
+
+    <h2>html 요소의 내용 변경</h2>
+    <div id="div">여기가 div로 선언 되었습니다.</div>
+    <a href="#" onclick="get()">div 요소 내용 출력하기</a><br>
+    <a href="#" onclick="set('변경 되었습니다.')">div 요소 내용 변경하기</a>
+
+    <script>
+        function get() {
+            alert(document.getElementById("div").innerHTML)
+        }
+        function set(v) {
+            document.getElementById("div").innerHTML = v;  
+        }
+    </script>
+    <hr>
+
+    <h2>html 요소의 속성 변경하기</h2>
+    <h3>이미지를 클릭해 보세요</h3>
+
+    <img src="./images/auto1.jpg" alt="자동차" width="200" onclick="changeimage()" id="image">
+    <script>
+        var ck = 0;
+        function changeimage() {
+            ck++;
+            if(ck%2==1) 
+                document.getElementById("image").src="./images/auto1.jpg"
+            else
+                document.getElementById("image").src="./images/auto4.jpg"
+        }
+    </script>
+    <hr>
+
+    <h2>html 요소의 스타일 변경하기</h2>
+    <p id="p1">This is a paragraph.</p>
+    <input type="button" onclick="changeStyle()" value="눌러보세요">
+
+    <script>
+        function changeStyle() {
+            document.getElementById("p1").style.color="red";
+            document.getElementById("p1").style.fontStyle="italic"
+            document.getElementById("p1").style.fontFamily="Centry Schoolbook";
+            document.getElementById("p1").style.fontSize="30px";
+        }
+    </script>
+    <hr>
+    <h2>버튼을 클릭하면 요소가 사라짐</h2>
+    <h3 id="heading">여기는 해딩입니다.</h3>
+    <input type="button" value="요소숨김" onclick="Hide()">
+    <input type="button" value="요소표시" onclick="Dispay()">
+
+    <script>
+        function Hide() {
+            document.getElementById("heading").style.visibility = "hidden"
+        }
+        function Dispay() {
+            document.getElementById("heading").style.visibility = "visible"
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>27 미션</title>
+    <style>
+
+        label {
+             width: 100px;
+            display:inline-block;
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>HTML5 요소 데모 화면 </h2>
+
+    <form action="#">
+        <p>
+            <label for="name">이름 :</label>
+            <input type="text" name="name" id="name" autofocus required>
+        </p>
+        <p>
+            <label for="email">이메일 :</label>
+            <input type="email" name="email" id="email" required placeholder="id@domain.com" autocomplete="on">
+        </p>
+        <p>
+            <label for="website">웹사이트 :</label>
+            <input type="url" name="website" id="website" placeholder="https://domain">
+        </p>
+        <p>
+            <label for="Intnum">정수 :</label>
+            <input type="number" name="Intnum" id="Intnum" value="0" min="0" max="10" step="2" >
+        </p>
+        <p>
+            <label for="range">범위 :</label>
+            <input type="range" name="range" id="range" value="3" min="0" max="10" step="3" >
+        </p>
+
+        <p>
+            <label for="message">메시지 :</label>
+            <textarea name="message" id="message" name="message" cols="70" rows="5" required ></textarea>
+        </p>
+
+         <!-- <p>메시지 :
+                <textarea name="reply" id="message" cols="50" rows="5" required></textarea>
+            </p> -->
+
+        <input type="submit">
+
+    </form>
+    
+</body>
+</html>

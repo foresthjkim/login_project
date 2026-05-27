@@ -1,0 +1,100 @@
+/* 웹폰트 import: Google font 에서 폰트 가져오는 예 - import는 순서장 가장위에 코딩 위치 */
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Dongle&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Do+Hyeon&family=Dongle&display=swap');
+
+.color>li {
+    margin-bottom: 10px;
+}
+/* 폰트 배경색 및 글자색 이름으로 표현하기 */
+.color>li:nth-child(1)>span {
+    background-color: yellow;
+    color: red;
+}
+/* 폰트 배경색 및 글자색 16진수로 표현하기: #ff */
+.color>li:nth-child(2)>span {
+    background-color: #ffff00;
+    color: #ff0000;
+}
+/* 폰트 배경색 및 글자색 10진수로 표현하기: rgb */
+.color>li:nth-child(3)>span {
+    background-color: rgb(255,255,0);
+    color: rgb(255,0,0);
+}
+/* 폰트 배경색 투명하게 opacity 50%(0.5 투명도조절가능) 표현하기: rgba */
+.color>li:nth-child(4)>span {
+    background-color: rgba(255,255,0,0.2);
+}
+/* 폰트 배경색을 퍼센트로 표현하기:% */
+.color>li:nth-child(5)>span {
+    background-color: rgb(100%,100%,0%);
+}
+/* ------------------------------------------- */
+/* 서체-폰트의 종류: p의 첫 번째 */
+.font+p {
+    font-family: 휴먼매직체,고딕;
+}
+/* 폰트 p의 두 번째 */
+.font+p+p {
+    font-family: 휴먼옛체,궁서체,명조,sans-serif;
+}
+.font+p+p+p {
+    font-family: "문제부 훈민정음체",serif;
+}
+.font+p+p+p+p {
+    font-family: 문제부 훈민정음체,serif;
+}
+/* 웹 폰트 - web font: google에서 import하고 싶은 폰트를 사용하는 예  */
+.webfont>p:nth-child(1) {
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.webfont>p:nth-child(2) {
+    font-family: "Dongle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.webfont>p:nth-child(3)>span {
+    font-family: "Bagel Fat One", system-ui;
+    font-weight: 500;
+    font-style:italic;
+}
+/* 폰트 사이즈: 기본 기준은 16px */
+.parents {
+    font-size: 20px;
+    color: blue;
+}
+.parents>p {
+    font-size: 1.5em;
+}
+/* 폰트의 속성 */
+.attr>p:nth-child(1)>span {
+    border-bottom: 5px dotted red;
+    font-weight: 900;
+}
+.attr>p:nth-child(2)>span {
+    border-bottom: 5px dotted blue;
+    font-style: italic;
+}
+.attr>p:nth-child(3)>span {
+    border-bottom: 5px dotted purple;
+    font-weight: bold;
+    font-variant:small-caps;
+}
+.attr>p:nth-child(4) {
+    line-height:100px;  
+}
+.attr>p:nth-child(5) {
+    line-height: 3em;
+}
+/* 폰트의 축약 */
+.fontstyle>p:nth-child(2) {
+    color: #ff0000;
+    border-bottom: 5px dotted blue;
+}
+.fontstyle>p:nth-child(3) {
+    font :italic 30px '나눔손글씨 붓',궁서,바탕체;
+}

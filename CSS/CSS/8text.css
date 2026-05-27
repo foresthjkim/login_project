@@ -1,0 +1,93 @@
+
+.align1 {
+    width: 600px;
+    text-align: right;
+    border: 1px solid red;
+}
+
+.align2 {
+    width: 600px;
+    text-align: justify;
+    border: 1px solid blue;
+}
+.align3 {
+    width: 600px;
+    text-align: right;
+    border: 1px solid greenyellow;
+}
+/* 가로정렬:문단은 블록요소에만 적용되고, 요소(span)에는 적용되지 않음 */
+/* text-align: right, left, center, justify */
+.align4>span {
+    width: 600px;
+    text-align: right;
+    border: 1px solid purple;
+}
+/* 세로정렬 vertical align: top, middle, bottom */
+p>img {
+    vertical-align: middle;
+}
+td {
+    width: 200px;
+    height: 200px;
+}
+table td:nth-child(1) {
+    vertical-align: middle;
+    text-align: center;
+}
+table td:nth-child(2) {
+    vertical-align: middle;
+    text-align: center;
+}
+/* 들여쓰기 */
+.indent {
+    text-indent: 50px;
+}
+/* 텍스트 변환 text-transform: uppercase, lowercase, capitalize */
+.transform>p:nth-child(1)>span {
+    text-transform: uppercase;
+}
+.transform>p:nth-child(2)>span {
+    text-transform: lowercase;
+}
+.transform>p:nth-child(3)>span {
+    text-transform: capitalize;
+}
+/* 텍스트 장식: text-decoration: underlinie, overline, line-through, none  */
+.decoration>p:nth-child(1) {
+    text-decoration: underline;
+}
+.decoration>p:nth-child(2) {
+    text-decoration:overline;
+}
+.decoration>p:nth-child(3) {
+    text-decoration:line-through;
+}
+/* 주의: a속성 고려해야 */
+.decoration>p:nth-child(4)>a {   
+    text-decoration: none;
+}
+/* 자간 letter-spacing: px, em(글자마다 자간이 다르기 때문에 잘 사용안함), rem, %(x안먹음) */
+.letter>li:nth-child(1) {
+    letter-spacing: -5px;
+}
+.letter>li:nth-child(2) {
+    letter-spacing: 10px;
+}
+/* 텍스트 그림자 text-shadow: x,y,흐림정도 색깔 순서로  */
+.shadow1 {
+    font-size: 40px;
+    /* text-shadow: 3px 5px 10px #000; */
+    /* 우측상단, 그림자 색을 빨강 */
+    text-shadow: -3px -5px 5px #f00;
+}
+.shadow2 {
+    font-size: 100px;
+    color: #990;
+    /* text-shadow: 2px 2px #246;
+    text-shadow: 4px 4px #357; */
+    /* text-shadow: 6px 6px #468; */
+    /* text-shadow: 8px 8px #579; */
+    /* text-shadow: 10px 10px #68a; */
+    /* text-shadow: 12px 12px #79b; */
+    text-shadow: 14px 14px #8ac;
+}

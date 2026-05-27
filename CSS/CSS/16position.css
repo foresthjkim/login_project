@@ -1,0 +1,44 @@
+
+/* --- position 포지션: static, relative, absolute, fixed --- */
+#one {
+    width: 200px;
+    height: 50px;
+    background-color: aqua;
+}
+
+#container {
+    position: relative;
+    background-color: blueviolet;
+    width: 500px;
+    height: 50px;
+
+}
+#two {
+    width: 200px;
+    height: 50px;
+    background-color: yellow;
+    /* position:static - 아무것도 안했을때와 static은 동일 */
+    /* relative: 겹침없이 left top값으로 이동가능 */
+    /* absolute: 겹침가능하게 무조건 left값을 기준으로 top left 값으로 이동 / 부모가 있을경우(예:위의 container 부모를 기준으로 이동 */
+    
+    position:absolute;              
+    left: 30px;
+    top: 30px;
+}
+/* 블록: position:fixed - 스크롤바를 내려도 블록3 는 화면에 고정되어 있음 */
+#three {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    background-color: greenyellow;
+
+    position: fixed;                        
+    top: 0px;
+    right: 0px;
+}
+
+.four {
+    width: 200px;
+    height: 50px;
+    background-color: cornflowerblue;
+}

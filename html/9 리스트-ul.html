@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ul-메뉴</title>
+    <style>
+       ul.menu {
+            padding: 0;                      /* 앞쪽부터 공간 여백을 준다. */
+            /* boarder:  1px solid red;  */
+        }
+        ul.menu>li {                         /* <li> 자식을 가져온다. */  
+            list-style: none;                /* 블렛 표시를 없앤다. */
+            float:left;                      /* 세로로 표시 */
+            margin-left: 20px;
+        }
+        ul.img {
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>비순차적 목록</h1>
+    <ul class="menu">                                                       <!--  ul: Unorder Line 비순차적 목록 - 메뉴를 만들때 ul을 사용한다./ ul 가 여러개일때 Class 사용구분 -->
+        <li><a href="./2 기초.html" target="_blank">기업소개</a></li>        <!-- <a>태그 href: 아직 경로가 지정되지 않을대 # 입력 -->
+        <li><a href="#">사업영역</a></li>
+        <li><a href="#">제품소개</a></li>
+        <li><a href="#">고객센터</a></li>
+        <li><a href="#">홍보자료실</a></li>
+        <li><a href="#">인재채용</a></li>
+
+    </ul>
+    <ul class="img">
+        <li>
+            아메리카노 <br>
+            <img src="./images/coffee.jpg" alt="아메리카노" width="100px">
+
+             <img src="./images/coffee.jpg" alt="아메리카노" width="100px">
+            
+
+        </li>
+    </ul>
+
+</body>
+</html>

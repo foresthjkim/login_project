@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>폼 요소 선택자: onclick / onsubmit </title>
+    <style>
+        #terms{width: 400px;height: 500px;overflow:auto;border: 1px solid #bbb;}
+        form{width: 600px;}
+    </style>
+
+</head>
+<body>
+    <h2>폼 요소 선택자 : 회원가입시 암호 및 동의서 체크 예제</h2>
+    <!------------ 비밀번호 확인하는 폼 1 --------------------->
+    <form action="#" method="get" name="f1">
+        <fieldset>
+            <legend>폼 요소1</legend>
+            <p>
+                <label for="user_pw1">비밀번호</label>
+                <input type="password" name="user_pw1" id="user_pw1">
+            </p>
+            <p>
+                <label for="user_pw2">비밀번호 확인</label>
+                <input type="text" name="user_pw2" id="user_pw2">
+                <input type="submit" value="확인">
+            </p>
+        </fieldset>
+    </form>
+     <script>
+        document.f1.onsubmit = function(e) {                // 폼 안에 있는 "확인" 버튼을 클릭했을때 아래 function(e)함수 실행
+            // var pw1 = document.getElementById("user_pw1");  // 방법1: document.getElementById 사용해도 됨
+            // var pw2 = document.getElementById("user_pw2");
+
+            var pw1 = document.f1.user_pw1;                    // 방법2: document.form.id로 접근 가능
+            var pw2 = document.f1.user_pw2;
+
+            pw2.value = pw1.value;
+            pw2.disabled = true;
+            return false;
+        }         
+    </script>
+
+    <!------------- 동의서 체크하는 폼 2 ----------------------->
+    <form action="#" method="get" name="f2">
+        <fieldset>
+            <legend>폼 요소2</legend>
+            <div id="term">
+                회사는 법령이 정하는 바에 따라 "회원"의 개인정보를 보호하기 위하여 노력합니다.<br>
+                개인정보 정책에 따라 회사의 개인정보취급방침이 적용됩니다.
+            </div>
+            <p>
+                <input type="checkbox" name="accept" id="accept">
+                <label for="accept">약관에 동의합니다.</label>
+            </p>
+            <p>
+                <input type="checkbox" name="allChk" id="allChk">
+                <label for="allChk">전체선택</label><br>
+                <input type="checkbox" name="subject1" id="subject1" value="s1">
+                <label for="subject1">과목1</label><br>
+                <input type="checkbox" name="subject2" id="subject2" value="s2">
+                <label for="subject2">과목2</label><br>
+                <input type="checkbox" name="subject3" id="subject3" value="s3">
+                <label for="subject2">과목3</label><br>
+            </p>
+            <p>
+                <input type="submit" value="등록완료">
+                <input type="reset" value="등록취소">
+            </p>
+        </fieldset>
+    </form>
+    <script>
+        document.f2.allChk.onclick = function() {
+            if(this.checked) {                          //방법 동일:document.getElementById("subject1).checked = true"
+                document.f2.subject1.checked = true;        
+                document.f2.subject2.checked = true;
+                document.f2.subject3.checked = true;
+            }
+            else {
+                document.f2.subject1.checked = false;
+                document.f2.subject2.checked = false;
+                document.f2.subject3.checked = false; 
+            }
+        }
+        // "등록완료" 버튼을 클릭했을때 동의서 항목이 모두 체크 되었는지 확인 후 제출 실행 
+        document.f2.onsubmit = function () {
+            if (document.f2.allChk.checked == false) {
+                alert ("개인정보 동의서 항목에 모두 체크 하세요");
+                act.focus();
+            }
+            else if (document.f2.accept.checked == false) {
+                alert ("약관에 동의합니다 항목에 체크 하세요");
+                act.focus();
+            }
+            else {
+                alert ("정상적으로 등록 완료 하였습니다.")
+                return false;
+            }
+        }
+    </script>
+    
+</body>
+</html>

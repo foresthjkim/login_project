@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>input-button</title>
+</head>
+<body>
+    <form action="#">
+        <input type="text">                                                                      <!-- 방법1: inupt type사용 / 이미지 는 거의사용 안함-->
+        <h3>input태그사용 : type는 submit, reset, button으로 지정할 수 있습니다.</h3>
+
+        <p>type = "submit" 데이터를 서버로 전송합니다.</p>
+        <input type="submit" value="submit">
+        
+        <p> type = "reset" 입력한 값을 초기화 한다.</p>
+        <input type="reset" value="지우기">
+
+        <p> type = "button" 버튼은 다양한 용도로 사용된다. 자바스크립트로 연결필요 </p>
+        <input type="button" value="button">
+
+        <p> type = "image"는 src속성을 가지며 이미지로 표현한다. input 요소로 이미지도 넣을 수 있다.</p>
+        <input type="image" src="./images/search.gif" alt="검색">
+
+
+        <h3>button 태그사용 : type는 submit, reset, button으로 지정할 수 있습니다.</h3>        <!-- 방법2: button type 태그사용-->
+        <button type="submit">submit</button>
+        <button type="reset">지우기</button>
+        <button type="button">button</button>
+        <button type="button">
+            <img src="./images/search.gif" alt="검색">
+        </button>
+
+
+
+
+    </form>
+
+
+</body>
+</html>
